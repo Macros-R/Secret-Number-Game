@@ -50,7 +50,7 @@ body::before {
 
 .container__informaciones {
     flex: 1;
-    padding: 3rem;
+    padding: 2rem;
 }
 
 .container__boton {
@@ -61,7 +61,7 @@ body::before {
     font-size: 24px;
     font-weight: 700;
     border: none;
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
 .container__boton:disabled {
@@ -78,13 +78,13 @@ body::before {
 
 .container__botones {
     display: flex;
-    gap: 2em;
-    width: 50%;
+    gap: 1em;
+    width: 400px;
 }
 
 h1 {
     font-family: 'Chakra Petch', sans-serif;
-    font-size: 72px;
+    font-size: 56px;
     padding-bottom: 3rem;
 }
 
@@ -94,6 +94,6 @@ button {
 }
 
 .texto__parrafo {
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 400;
 }
