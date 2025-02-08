@@ -79,7 +79,7 @@ body::before {
 .container__botones {
     display: flex;
     gap: 2em;
-    width: fit-content(50%);
+    width: 50%;
 }
 
 h1 {
