@@ -7,10 +7,9 @@ function asignarTextoElemento(elemento, texto){
     elementoHTML.innerHTML = texto;
     return;
 }
-function intentarAdivinar(){
-    let numeroAdivinado = parseInt(document.getElementById('numeroAdivinado').value);
+function intentarAdivinar(numeroAdivinado){
     if(numeroAdivinado===numeroSecreto){
-        asignarTextoElemento('p',`Felicidades! acertaste el numero en ${intentos} ${(intentos===1)?'intento':'intentos'}.`);
+        asignarTextoElemento('p',`Felicidades! El numero era : ${numeroAdivinado}<br>acertaste el numero en ${intentos} ${(intentos===1)?'intento':'intentos'}.`);
         document.getElementById('reiniciar').removeAttribute('disabled');
     }else{
         if(numeroAdivinado<numeroSecreto){
@@ -19,12 +18,7 @@ function intentarAdivinar(){
             asignarTextoElemento('p','El numero secreto es menor.');
         }
         intentos++;
-        limpiar();
     }
-    return;
-}
-function limpiar(){
-    document.querySelector('#numeroAdivinado').value='';
     return;
 }
 function inicializar(){
@@ -32,13 +26,17 @@ function inicializar(){
     asignarTextoElemento('p','Introduce un numero del 1 al 10');
     intentos = 1;
     generarNumeroSecreto();
-    console.log(numerosSorteados)
-    limpiar();
     document.querySelector('#reiniciar').setAttribute('disabled','true');
-    if (numerosSorteados.length>15){
+    for (let i=1;i<=10;i++){
+        document.querySelector(`#b${i}`).removeAttribute('disabled');
+    }
+    if (numerosSorteados.length>30){
         location.reload();
     }
     return;
+}
+function desabilitar(bid){
+    document.querySelector(`#b${bid}`).setAttribute('disabled','true');
 }
 function generarNumeroSecreto(){
     if(numeroSecreto===undefined){
